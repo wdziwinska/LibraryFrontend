@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    background: black;
+    margin-top: 20%;
+}
+
+.row {
+    background-color: rgb(25, 25, 25);
+}
+
+.btn {
+    /* background-color: rgb(122, 40, 203); */
+    margin-left: 5%;
+}
+
+/* .btn.hover {
+    background: rgb(227, 20, 20);
+    margin-left: 5%;
+} */
