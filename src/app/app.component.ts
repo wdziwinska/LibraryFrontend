@@ -4,6 +4,7 @@ import { DataState } from './enum/data-state.enum';
 import { AppState } from './interface/app-state';
 import { CustomResponse } from './interface/custom-response';
 import { BookService } from './service/book.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,10 @@ import { BookService } from './service/book.service';
 })
 export class AppComponent implements OnInit {
   appState$: Observable<AppState<CustomResponse>>;
-  constructor(private bookService: BookService) { }
+  readonly DataState = DataState;
+
+
+  constructor(private bookService: BookService, private router: Router) { }
 
   ngOnInit(): void {
     this.appState$ = this.bookService.books$
@@ -25,5 +29,9 @@ export class AppComponent implements OnInit {
           return of({ dataState: DataState.ERROR_STATE, error })
         })
       );
+  }
+
+  goToSavePage(pageName: string): void{
+    this.router.navigate([`${pageName}`])
   }
 }

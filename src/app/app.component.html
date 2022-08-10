@@ -1,26 +1,31 @@
-<div>{{appState$ | async | json}}</div>
+<!-- <div>{{appState$ | async | json}}</div> -->
 
-<!-- <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
-     <ng-container>
+<ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+    <!-- <ng-container *ngSwitchCase="DataState.LOADING_STATE"> -->
+        <!-- <div class="col-md-12 single-note text-center">
+            <div class="spinner-border text-info" role="status"></div>
+        </div>
 
-    </ng-container> -->
-<!-- </ng-container> --> 
+    </ng-container>
 
-
-<div class="container-xl" style="text-align: center">
-    <div class="table-responsive">
-        <div class="row">
-            <div class="buttons">
-                <button type="button" class="btn">
-                    Dodaj książkę
-                </button>
-                <button type="button" class="btn">
-                    Usuń książkę
-                </button>
-                <button type="button" class="btn">
-                    Edytuj książkę
-                </button>
+    <ng-container *ngSwitchCase="DataState.LOADED_STATE"> -->
+</ng-container>
+        <div class="container-xl" style="text-align: center">
+            <div class="table-responsive">
+                <div class="row">
+                    <!-- onclick="window.location.href = 'http://localhost:4200/add' -->
+                    <div class="buttons">
+                        <button type="button" class="btn" (click)="goToSavePage('save')">
+                            Dodaj książkę
+                        </button>
+                        <button type="button" class="btn">
+                            Usuń książkę
+                        </button>
+                        <button type="button" class="btn">
+                            Edytuj książkę
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    <!-- </ng-container> -->
