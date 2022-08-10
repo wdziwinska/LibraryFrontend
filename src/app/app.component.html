@@ -1,10 +1,16 @@
-<!-- <div>{{appState$ | async | json}}</div> -->
+<div>{{appState$ | async | json}}</div>
+
+<!-- <ng-container *ngIf="(appState$ | async) as appState" [ngSwitch]="appState.dataState">
+     <ng-container>
+
+    </ng-container> -->
+<!-- </ng-container> --> 
 
 
 <div class="container-xl" style="text-align: center">
     <div class="table-responsive">
-        <div class="row" >
-            <div class="buttons" >
+        <div class="row">
+            <div class="buttons">
                 <button type="button" class="btn">
                     Dodaj książkę
                 </button>

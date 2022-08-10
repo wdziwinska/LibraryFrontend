@@ -21,6 +21,7 @@ export class BookService {
   //wersja 2
   books$ = <Observable<CustomResponse>>
     this.http.get<CustomResponse>(`${this.apiUrl}/book/list`)
+    // this.http.get<CustomResponse>(`${this.apiUrl}`)
       .pipe(
         tap(console.log),
         catchError(this.handleError)
